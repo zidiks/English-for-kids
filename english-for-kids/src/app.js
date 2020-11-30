@@ -1,0 +1,1 @@
+require(["./services/router", "./main.css"]);
