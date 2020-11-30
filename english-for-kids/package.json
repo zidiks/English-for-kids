@@ -1,7 +1,7 @@
 {
-    "name": "english-for-kids",
+    "name": "zidiks",
     "version": "1.0.0",
-    "description": "",
+    "description": "zidiks's framework",
     "main": "index.js",
     "scripts": {
         "build": "webpack",
