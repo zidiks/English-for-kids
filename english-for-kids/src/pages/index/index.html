@@ -1,1 +1,44 @@
-<h1>TEST INDEX</h1>
+<nav>
+    <div class="nav-item" style="justify-content: flex-start;">
+        <button id="menu_button">
+            <input type="checkbox" id="menu_checkbox">
+            <label for="menu_checkbox" id="menu_label">
+                <div id="menu_text_bar"></div>
+            </label>
+        </button>
+    </div>
+    <div>
+        <z-link id="logo" to="home">English for kids</z-link>
+    </div>
+    <div class="nav-item" style="justify-content: flex-end;">
+        <button id="toggle-btn">
+            <input type="checkbox" name="toggle" id="toggle-button">
+            <label id="toggle-label" for="toggle-button">
+                <span id="toggle-play">PLAY</span>
+                <span id="toggle-train">TRAIN</span>
+                <span id="toggle-point"></span>
+            </label>
+        </button>
+    </div>
+    <div id="menu">
+        <ul id="menu-inner">
+            <li>
+                <z-link to='home'>MAIN</z-link>
+            </li>
+            <li>
+                <z-link to='category'>CATEGORIES</z-link>
+                <ul id="menu-categories">
+                    <li>Family</li>
+                    <li>Animals</li>
+                    <li>Fruits</li>
+                </ul>
+            </li>
+            <li>
+                <z-link to='stats'>STATS</z-link>
+            </li>
+        </ul>
+    </div>
+    <div id="menu-shadow"></div>
+</nav>
+<routeroutlet id="fade"></routeroutlet>
+<div id="loading"></div>

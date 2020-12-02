@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap');
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #0093E9;
+    background-image: linear-gradient(135deg, #0093E9 0%, #80D0C7 100%);
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+button {
+    overflow: hidden;
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+z-link {
+    cursor: pointer;
+    user-select: none;
+}
+
+routeroutlet {
+    display: block;
+    position: relative;
+}

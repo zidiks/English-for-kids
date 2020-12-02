@@ -1,6 +1,6 @@
 {
-    "name": "zidiks",
-    "version": "1.0.0",
+    "name": "zidiks-fw",
+    "version": "1.1.14",
     "description": "zidiks's framework",
     "main": "index.js",
     "scripts": {
@@ -21,5 +21,13 @@
     "devDependencies": {
         "css-loader": "^5.0.1",
         "webpack-cli": "^4.2.0"
-    }
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zidiks/english-for-kids.git"
+    },
+    "bugs": {
+        "url": "https://github.com/zidiks/english-for-kids/issues"
+    },
+    "homepage": "https://github.com/zidiks/english-for-kids#readme"
 }
