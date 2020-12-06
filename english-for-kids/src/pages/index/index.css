@@ -80,11 +80,11 @@ nav {
 #menu_text_bar:before {
     content: 'MENU';
     position: absolute;
-    top: 5px;
+    top: 8px;
     right: 0;
     left: 0;
     color: #fff;
-    font-size: 12px;
+    font-size: 88%;
     font-weight: bold;
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
     text-align: center;

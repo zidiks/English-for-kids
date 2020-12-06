@@ -1,6 +1,6 @@
 const pages = require('../modules').pages;
 const index = document.createElement('app');
-//document.body.style.backgroundImage = 'Url("/assets/bg.svg")';
+const { states } = require('./globalProps');
 index.innerHTML = pages.index.template;
 document.body.appendChild(index);
 const app = document.getElementsByTagName('routeroutlet')[0];
@@ -33,10 +33,10 @@ toggle.check.addEventListener('change', () => {
     toggleAnimation();
 });
 
-const addRouteListener = (e) => {
-    this.routeTo(e.target.getAttribute('to'));
+const addRouteListener = (event) => {
+    if (event.currentTarget.getAttribute('category')) states.currentCategory = event.currentTarget.getAttribute('category');
+    routeTo(event.currentTarget.getAttribute('to'));
 }
-
 const initRoutes = () => {
     Array.from(document.querySelectorAll('z-link')).forEach(element => {
         element.removeEventListener('click', addRouteListener);
@@ -44,7 +44,7 @@ const initRoutes = () => {
     });
 }
 
-exports.routeTo = (route) => {
+const routeTo = (route) => {
     app.style.opacity = 0;
     toggleMenu.checked = false;
     menu.style.transform = 'translateX(-26rem)';
@@ -52,7 +52,6 @@ exports.routeTo = (route) => {
     setTimeout(() => {
         if (pages[route] != undefined) swapHTML(pages[route]);
         else throw `Page "${route}" is not found!`;
-        initRoutes();
         setTimeout(() => {
             app.style.opacity = 1;
         }, 250);
@@ -76,6 +75,7 @@ const toggleAnimation = () => {
 const swapHTML = (tmpl) => {
     app.innerHTML = tmpl.template;
     tmpl.oninit();
+    initRoutes();
 }
 
-this.routeTo('home');
+routeTo('home');
