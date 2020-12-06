@@ -33,11 +33,14 @@ toggle.check.addEventListener('change', () => {
     toggleAnimation();
 });
 
+const addRouteListener = (e) => {
+    this.routeTo(e.target.getAttribute('to'));
+}
+
 const initRoutes = () => {
     Array.from(document.querySelectorAll('z-link')).forEach(element => {
-        element.addEventListener('click', () => {
-            this.routeTo(element.getAttribute('to'));
-        })
+        element.removeEventListener('click', addRouteListener);
+        element.addEventListener('click', addRouteListener);
     });
 }
 
