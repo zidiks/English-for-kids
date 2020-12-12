@@ -23,22 +23,46 @@
     <div id="menu">
         <ul id="menu-inner">
             <li>
-                <z-link to='home'>MAIN</z-link>
+                <z-link class="menu-cat-link active-cat-link" to='home'>MAIN</z-link>
             </li>
             <li>
-                <z-link to='category'>CATEGORIES</z-link>
+                <span to='category'>CATEGORIES</span>
                 <ul id="menu-categories">
-                    <li>Family</li>
-                    <li>Animals</li>
-                    <li>Fruits</li>
+                    <li>
+                        <z-link to="category" class="menu-cat-link" category="family">Family</z-link>
+                    </li>
+                    <li>
+                        <z-link to="category" class="menu-cat-link" category="animals">Animals</z-link>
+                    </li>
+                    <li>
+                        <z-link to="category" class="menu-cat-link" category="school">School</z-link>
+                    </li>
+                    <li>
+                        <z-link to="category" class="menu-cat-link" category="colors">Colors</z-link>
+                    </li>
+                    <li>
+                        <z-link to="category" class="menu-cat-link" category="actions">Actions</z-link>
+                    </li>
+                    <li>
+                        <z-link to="category" class="menu-cat-link" category="food">Food</z-link>
+                    </li>
+                    <li>
+                        <z-link to="category" class="menu-cat-link" category="clothes">Clothes</z-link>
+                    </li>
+                    <li>
+                        <z-link to="category" class="menu-cat-link" category="home">Home</z-link>
+                    </li>
                 </ul>
             </li>
             <li>
-                <z-link to='stats'>STATS</z-link>
+                <z-link class="menu-cat-link" to='stats'>STATS</z-link>
             </li>
         </ul>
     </div>
     <div id="menu-shadow"></div>
 </nav>
 <routeroutlet id="fade"></routeroutlet>
+<div id="play-panel">
+    <span id="play-start" class="material-icons play-panel-btn">play_circle_outline</span>
+</div>
 <div id="loading"></div>

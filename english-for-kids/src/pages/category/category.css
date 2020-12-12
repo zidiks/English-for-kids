@@ -5,19 +5,24 @@
 
 .category-item {
     height: calc((100vw - 14rem)/4);
-    background-color: white;
-    transition: transform .4s;
-    overflow: hidden;
-    border-radius: 2rem;
-    cursor: pointer;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-perspective: 1200;
+    perspective: 1200;
+    -moz-transform: perspective(1200px);
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
 }
 
-.category-item:hover {
-    transform: scale(1.05);
+.category-item:hover .item-outer {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.right-a {
+    box-shadow: 0 0 15px rgba(81, 255, 104, 1) !important;
+}
+
+.wrong-a {
+    box-shadow: 0 0 15px rgba(255, 81, 81, 1) !important;
 }
 
 #category-grid {
@@ -48,6 +53,47 @@
     color: #222b56;
 }
 
+.item-face,
+.item-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item-back {
+    -webkit-transform: rotateY(-180deg);
+    -moz-transform: rotateY(-180deg);
+    -ms-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+    background: white;
+    z-index: 1;
+}
+
+.item-face {
+    z-index: 2;
+    transition: opacity .2s;
+    background: white;
+}
+
+.item-outer {
+    position: relative;
+    background-color: white;
+    overflow: hidden;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: .4s;
+    width: 100%;
+    height: 100%;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
 .item-img {
     position: relative;
     width: 60%;
@@ -58,10 +104,72 @@
     margin-bottom: 10%;
 }
 
+.revert-card {
+    position: absolute;
+    z-index: 20;
+    color: #222b56;
+    top: 0.8rem;
+    right: 0.8rem;
+    cursor: pointer;
+    transition: color .4s;
+}
+
+.active-cat-link {
+    color: #222b56 !important;
+}
+
+.revert-card:hover {
+    color: #FFBC29;
+}
+
+.revert-card span {
+    font-size: 3vw;
+}
+
+#end-of-game {
+    position: fixed;
+    width: 70vw;
+    height: 70vh;
+    left: 15vw;
+    top: 15vh;
+    background-color: white;
+    overflow: hidden;
+    border-radius: 1rem;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    display: none;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #222b56;
+}
+
+.stats-press {
+    text-align: center;
+}
+
+#stats-smile {
+    font-size: 8rem;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+#stats-mistakes {
+    font-size: 4rem;
+    text-align: center;
+}
+
 @media(max-width: 768px) {
     #category-grid {
         grid-template-columns: 1fr;
         margin-bottom: 2rem;
+    }
+    #end-of-game {
+        width: 90vw;
+        height: 50vh;
+        left: 5vw;
+        top: 25vh;
     }
     #category-page {
         width: calc(100%-4rem);
@@ -73,5 +181,12 @@
     .item-name {
         font-size: 8vw;
         margin-bottom: 4vw;
+    }
+    .revert-card {
+        top: 4vw;
+        right: 4vw;
+    }
+    .revert-card span {
+        font-size: 10vw;
     }
 }
